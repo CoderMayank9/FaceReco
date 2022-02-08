@@ -1,0 +1,27 @@
+body
+{
+background-image: linear-gradient(purple,gold);
+color: white;
+border: solid 10px white;
+margin: 10px;
+}
+.heading
+{
+width: 100%;
+font-size: 22px;
+
+}
+#camera
+{
+border: 2px black solid;
+width: 350px;
+height: 300px;
+}
+.objects,#objectname,#objectaccuracy
+{
+color: white;
+}
+p
+{
+color: white;    
+}
