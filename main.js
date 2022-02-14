@@ -13,9 +13,27 @@ document.getElementById("result").innerHTML='<img id="captured_image" src="'+dat
 });
 }
 console.log("ml5.version: ",ml5.version);
-classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/o6hZaAg7D/model.json',modelloaded);
+classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/JsVjOQVwC/model.json',modelloaded);
 function modelloaded() 
 {
 console.log("model is loaded");
 
+}
+function check()
+{
+img = document.getElementById("captured_image");
+classifier.classify(img , gotresults);
+}
+function gotresults(error,results)
+{
+if(error)
+{
+console.error(error);
+}
+else
+{
+console.log(results);
+document.getElementById("personname").innerHTML=results[0].label;
+document.getElementById("objectaccuracy").innerHTML=results[0].confidence.toFixed(2);
+}
 }
